@@ -2,14 +2,14 @@ import socket,cv2, pickle,struct
 
 # create socket
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-host_ip = '192.168.0.107' # paste your server ip address here
+host_ip = '<Enter your server Ip>'
 port = 5050
-client_socket.connect((host_ip,port)) # a tuple
+client_socket.connect((host_ip,port))
 data = b""
 payload_size = struct.calcsize("Q")
 while True:
     while len(data) < payload_size:
-        packet = client_socket.recv(4*1024) # 4K
+        packet = client_socket.recv(4*1024)
         if not packet: break
         data+=packet
     packed_msg_size = data[:payload_size]
