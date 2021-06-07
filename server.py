@@ -2,11 +2,8 @@ import socket, cv2 , pickle,struct
 
 # Creating_Socket
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-host_name  = socket.gethostname()
-host_ip = socket.gethostbyname(host_name)
-print('HOST IP:',host_ip)
 port = 5050
-socket_address = ('192.168.0.107',port)
+socket_address = ('<your IP>',port)
 
 # Socket_Binding
 server_socket.bind(socket_address)
